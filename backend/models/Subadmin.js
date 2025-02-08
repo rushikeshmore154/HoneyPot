@@ -1,4 +1,4 @@
-import { Schema, Types } from "mongoose";
+import { Schema, Types,model } from "mongoose";
 
 const subAdminSchema = new Schema(
     {
@@ -11,4 +11,5 @@ const subAdminSchema = new Schema(
     { timestamps: true }
 );
 
-export default subAdminSchema;
+const SubAdmin = model("SubAdmin", subAdminSchema);
+export default SubAdmin;

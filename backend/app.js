@@ -3,6 +3,7 @@ import cors from "cors"
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import { connectDb } from "./db.js"
+import mainRouter from "./routes/index.js"
 
 dotenv.config()
 
@@ -17,7 +18,7 @@ app.get("/", (req, res) => {
     res.send("Hello World")
 })
 
-
+app.use("/api", mainRouter)
 
 const start = async () => {
     await connectDb();

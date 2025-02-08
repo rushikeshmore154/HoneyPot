@@ -1,4 +1,4 @@
-import { Schema, Types } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
 const hospitalSchema = new Schema(
     {
@@ -11,8 +11,11 @@ const hospitalSchema = new Schema(
         occupiedBeds: { type: Number, required: true },
         availableBeds: { type: Number, required: true },
         subAdmins: [{ type: Types.ObjectId, ref: "SubAdmin" }],
+        requests: [{ type: Types.ObjectId, ref: "Request" }],
+        appointments: [{ type: Types.ObjectId, ref: "Appointment" }],
     },
     { timestamps: true }
 );
 
-export default hospitalSchema;
+const Hospital = model("Hospital", hospitalSchema);
+export default Hospital;
