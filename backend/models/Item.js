@@ -6,8 +6,7 @@ const ItemSchema = new Schema({
         required: true,
     },
     category: {
-        type: Types.ObjectId,
-        ref: "Category",
+        type:String,
         required: true,
     },
     description: {

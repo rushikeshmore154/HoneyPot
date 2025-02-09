@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage";
 import HospitalDashboardPage from "./pages/HospitalDashboardPage";
 import { Toaster } from "./components/ui/toaster";
 import HospitalAnalyticsPage from "./pages/HospitalAnalyticsPage";
+import HospitalAppointmentPages from "./pages/HospitalAppointmentPages";
+import InventoryManagement from "./pages/HospitalInventory";
 
 function App() {
     return (
@@ -43,6 +45,22 @@ function App() {
                         element={
                             <Protected>
                                 <HospitalAnalyticsPage />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/hospital/dashboard/appointments"
+                        element={
+                            <Protected>
+                                <HospitalAppointmentPages />
+                            </Protected>
+                        }
+                    />
+                    <Route
+                        path="/hospital/dashboard/inventory"
+                        element={
+                            <Protected>
+                                <InventoryManagement />
                             </Protected>
                         }
                     />

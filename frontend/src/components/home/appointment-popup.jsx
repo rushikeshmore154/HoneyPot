@@ -11,8 +11,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { DialogTrigger } from "@radix-ui/react-dialog";
+import { useNavigate } from "react-router";
 
 export default function BookAppointmentPopup({ hospitalId }) {
+    const navigate = useNavigate();
     const [patientName, setPatientName] = useState("");
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
@@ -39,6 +41,15 @@ export default function BookAppointmentPopup({ hospitalId }) {
     }, [date, time]);
 
     const handleSubmit = async () => {
+        const token = localStorage.getItem("authToken");
+        if (!token) {
+            navigate("/auth/login");
+            toast({
+                title: "Please login to book an appointment",
+                variant: "destructive",
+            })
+            return;
+        }
         if (!patientName || !date || !time) {
             toast({
                 title: "All fields are required",

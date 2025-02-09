@@ -22,7 +22,7 @@ export default function Navbar() {
                 <div className="flex gap-6 items-center">
                     <div className="hidden md:flex gap-6">
                         <NavLink to="/home">Home</NavLink>
-                        <NavLink to="/profile">Profile</NavLink>
+                        <NavLink to="/auth/login">Login</NavLink>
                     </div>
 
                     {/* Right Icons */}
@@ -66,11 +66,11 @@ export default function Navbar() {
                             Home
                         </NavLink>
                         <NavLink
-                            to="/profile"
+                            to="/auth/login"
                             mobile
                             onClick={() => setIsOpen(false)}
                         >
-                            Profile
+                            Login
                         </NavLink>
                     </motion.div>
                 )}

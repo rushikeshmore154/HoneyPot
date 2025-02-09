@@ -67,15 +67,16 @@ export const getHospitalById = async (req, res) => {
     try {
         let hospital = {};
         if (req.user.role === "hospital") {
-            hospital = await Hospital.findById(req.user.id).select("-password").populate("requests").populate("appointments").populate("subAdmins");
-        } else if (req.user.role === "subAdmin") {
-            hospital = await Hospital.findById(req.params.id).select("-password").populate("requests")
-        } else {
-            hospital = await Hospital.findById(req.params.id).select("-password").select("-subAdmins").select("-requests").select("-appointments");
+            hospital = await Hospital.findById(req.user.id).select("-password")
+        } else{
+            res.status(400).send({
+                message: "Unauthorized"
+            })
         }
         if (!hospital) return res.status(404).json({ message: "Hospital not found" });
         res.status(200).json(hospital);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ message: "Server error", error });
     }
 };

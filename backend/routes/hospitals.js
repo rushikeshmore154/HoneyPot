@@ -15,20 +15,20 @@ import {
     incrementBedAvailability
 } from "../controllers/hospitals.js"
 import authentication from "../middleware/authentication.js";
+import { getHospitalAppointments } from "../controllers/appointments.js";
 const router = Router();
 
 router.post("/login", hospitalLogin);
 router.get("/getall", getAllHospitals);
 router.post("/create", createHospital);
 router.post("/create-many", createManyHospitals);
-router.get("/get/:id", authentication, getHospitalById);
+router.get("/get", authentication, getHospitalById);
 router.put("/update/:id", authentication, updateHospital);
 router.delete("/delete/:id", authentication, deleteHospital);
 router.patch("/update-beds/:id", authentication, updateBedAvailability);
 router.get("/get-requests/:id", authentication, getRequests);
-router.get("/get-appointments/:id", authentication, getAppointments);
-router.get("/get-availablity",authentication,getAvailablity)
-router.post("/decrement-availablity",authentication,decrementBedAvailability)
-router.post("/increment-availablity",authentication,incrementBedAvailability)
+router.get("/get-availablity", authentication, getAvailablity)
+router.post("/decrement-availablity", authentication, decrementBedAvailability)
+router.post("/increment-availablity", authentication, incrementBedAvailability)
 
 export default router;

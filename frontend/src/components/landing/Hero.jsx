@@ -37,7 +37,7 @@ export default function Hero() {
                                         navigate("/home");
                                     }
                                 }else{
-                                    navigate("/auth/login");
+                                    navigate("/home ");
                                 }
                             }}
                         >
@@ -47,6 +47,11 @@ export default function Hero() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-white text-blue-500 px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-gray-100 transition-colors duration-200"
+                            onClick={()=>{
+                                document.getElementById("about").scrollIntoView({
+                                    behavior:'smooth'
+                                })
+                            }}
                         >
                             Learn More
                         </motion.button>

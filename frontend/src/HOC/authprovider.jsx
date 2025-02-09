@@ -7,13 +7,9 @@ export default function Protected({ children }) {
     useEffect(() => {
         const authToken = localStorage.getItem("authToken");
         const role = localStorage.getItem("role");
-        if (!authToken) {
-            navigate("/auth/login");
-        }
         console.log(role);
         if (
-            role !== "hospital" &&
-            role !== "subadmin" &&
+            (!authToken || (role !== "hospital" && role !== "subadmin")) &&
             location.pathname.includes("hospital")
         ) {
             navigate("/home");

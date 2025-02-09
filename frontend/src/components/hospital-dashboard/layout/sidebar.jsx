@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
     Calendar,
@@ -18,8 +18,20 @@ import { SheetTitle } from "@/components/ui/sheet";
 
 export default function AppSidebar() {
     const location = useLocation();
+    const [hospital, setHospital] = useState({
+        name: "City Hospital",
+        address: "123, Main Street, New York",
+    });
 
     const menuItems = [
+        {
+            id:"beds",
+            icon: BedDouble,
+            label: "Beds",
+            details: "",
+            category: "main",
+            path: "/hospital/dashboard",
+        },
         {
             id: "appointments",
             icon: Calendar,
@@ -27,21 +39,6 @@ export default function AppSidebar() {
             details: "",
             category: "main",
             path: "/hospital/dashboard/appointments",
-        },
-        {
-            id: "patients",
-            icon: Users,
-            label: "Patients",
-            category: "main",
-            path: "/hospital/dashboard/patients",
-        },
-        {
-            id: "requests",
-            icon: ClipboardList,
-            label: "Requests",
-            details: "",
-            category: "main",
-            path: "/hospital/dashboard/requests",
         },
         {
             id: "inventory",
@@ -58,18 +55,30 @@ export default function AppSidebar() {
             category: "management",
             path: "/hospital/dashboard/analytics",
         },
-        {
-            id: "dashboard",
-            icon: Home,
-            label: "Overview",
-            category: "management",
-            path: "/hospital/dashboard/overview",
-        },
     ];
+
+    const getHospitalInfo = async () => {
+        try{
+            const response = await fetch("http://localhost:5000/api/hospital/get",{
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: `${localStorage.getItem("authToken")}`,
+                },
+            });
+            const data = await response.json();
+            setHospital(data);
+        }catch(error){
+            console.error(error);
+        }
+    }
 
     const isActivePath = (path) => {
         return location.pathname === path;
     };
+    useEffect(() => {
+        getHospitalInfo();
+    }, []);
 
     return (
         <Sidebar>
@@ -84,7 +93,7 @@ export default function AppSidebar() {
                                 <div className="flex items-center px-4 mb-6">
                                     <Building2 className="h-6 w-6 text-primary mr-2" />
                                     <h2 className="text-xl font-bold text-primary">
-                                        City Hospital
+                                        {hospital.name}
                                     </h2>
                                 </div>
                             </Link>

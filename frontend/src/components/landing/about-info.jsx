@@ -8,11 +8,6 @@ export default function AboutInfo() {
             patient care through real-time monitoring and efficient resource allocation.
             Our mission is to provide seamless experiences for hospitals and patients alike.
           </p>
-          <div className="flex justify-center">
-            <button className="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-gray-100 transition duration-200">
-              Learn More
-            </button>
-          </div>
         </div>
       </section>
     );
