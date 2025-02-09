@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
 
 export default function Hero() {
+    const navigate = useNavigate();
     return (
         <section className="bg-accent py-20">
             <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
@@ -22,6 +24,22 @@ export default function Hero() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold shadow-md hover:bg-blue-600 transition-colors duration-200"
+                            onClick={() => {
+                                const auth = localStorage.getItem("authToken");
+                                const role = localStorage.getItem("role");
+                                if (auth) {
+                                    if (
+                                        role === "hospital" ||
+                                        role === "subAdmin"
+                                    ) {
+                                        navigate("/hospital/dashboard");
+                                    }else{
+                                        navigate("/home");
+                                    }
+                                }else{
+                                    navigate("/auth/login");
+                                }
+                            }}
                         >
                             Get Started
                         </motion.button>
@@ -43,9 +61,7 @@ export default function Hero() {
                     <img
                         src="/placeholder.svg?height=400&width=600"
                         alt="Hospital Queue Management System"
-                        width={600}
-                        height={400}
-                        className="rounded-lg shadow-lg"
+                        className="rounded-lg shadow-lg w-full h-full"
                     ></img>
                 </motion.div>
             </div>

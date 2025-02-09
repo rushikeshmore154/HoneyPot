@@ -1,12 +1,13 @@
 import Hospital from "../models/Hospital.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { notifyUsers } from "./request.js";
 
 const SECRET_KEY = process.env.JWT_SECRET || "your_secret_key";
 
 export const createHospital = async (req, res) => {
     try {
-        const { name, address, contactNumber, email, password, totalBeds } = req.body;
+        const { name, address, contactNumber, email, password, totalBeds, city } = req.body;
         const existingHospital = await Hospital.findOne({ email });
         if (existingHospital) return res.status(400).json({ message: "Hospital already exists" });
 
@@ -21,10 +22,32 @@ export const createHospital = async (req, res) => {
             occupiedBeds: 0,
             availableBeds: totalBeds,
             subAdmins: [],
+            requests: [],
+            appointments: [],
+            city
         });
 
         await hospital.save();
         res.status(201).json({ message: "Hospital created successfully", hospital });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+
+export const createManyHospitals = async (req, res) => {
+    try {
+        const hospitals = req.body;
+
+        const hashedHospitals = await Promise.all(
+            hospitals.map(async (hospital) => {
+                const hashedPassword = await bcrypt.hash(hospital.password, 10);
+                return { ...hospital, password: hashedPassword };
+            })
+        );
+
+        const createdHospitals = await Hospital.insertMany(hashedHospitals);
+        res.status(201).json({ message: "Hospitals created successfully", hospitals: createdHospitals });
     } catch (error) {
         res.status(500).json({ message: "Server error", error });
     }
@@ -98,7 +121,10 @@ export const hospitalLogin = async (req, res) => {
 
         const token = jwt.sign({ id: hospital._id, role: "hospital" }, SECRET_KEY, { expiresIn: "1d" });
 
-        res.status(200).json({ message: "Login successful", token, hospitalId: hospital._id });
+        res.status(200).json({
+            message: "Login successful", token, hospitalId: hospital._id, role:
+                'hospital'
+        });
     } catch (error) {
         res.status(500).json({ message: "Server error", error });
     }
@@ -118,6 +144,42 @@ export const updateBedAvailability = async (req, res) => {
 
         hospital.occupiedBeds = occupiedBeds;
         hospital.availableBeds = hospital.totalBeds - occupiedBeds;
+
+        await hospital.save();
+        res.status(200).json({ message: "Bed availability updated", hospital });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+export const incrementBedAvailability = async (req, res) => {
+    try {
+        if (req.user.role != "hospital" && req.user.role != "subAdmin") {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
+        const hospital = await Hospital.findById(req.user.id);
+        if (!hospital) return res.status(404).json({ message: "Hospital not found" });
+
+        hospital.occupiedBeds--;
+        hospital.availableBeds++;
+        await notifyUsers(hospital._id);
+        await hospital.save();
+        res.status(200).json({ message: "Bed availability updated", hospital });
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+export const decrementBedAvailability = async (req, res) => {
+    try {
+        if (req.user.role != "hospital" && req.user.role != "subAdmin") {
+            return res.status(401).json({ message: "Unauthorized" });
+        }
+        const hospital = await Hospital.findById(req.user.id);
+        if (!hospital) return res.status(404).json({ message: "Hospital not found" });
+
+        hospital.occupiedBeds++;
+        hospital.availableBeds--;
 
         await hospital.save();
         res.status(200).json({ message: "Bed availability updated", hospital });
@@ -148,6 +210,19 @@ export const getAppointments = async (req, res) => {
         if (!hospital) return res.status(404).json({ message: "Hospital not found" });
 
         res.status(200).json(hospital.appointments);
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error });
+    }
+};
+
+export const getAvailablity = async (req, res) => {
+    try {
+        if (req.user.role != "hospital") return res.status(401).json({ message: "Unauthorized" });
+        const id = req.user.id
+        const hospital = await Hospital.findById(id);
+        if (!hospital) return res.status(404).json({ message: "Hospital not found" });
+
+        res.status(200).json({ totalBeds: hospital.totalBeds, availableBeds: hospital.availableBeds, occupiedBeds: hospital.occupiedBeds });
     } catch (error) {
         res.status(500).json({ message: "Server error", error });
     }
