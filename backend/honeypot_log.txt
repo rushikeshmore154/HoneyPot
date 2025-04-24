@@ -1,0 +1,357 @@
+[2025-04-21T20:16:44.818Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-21T20:17:25.672Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-21T20:17:51.947Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-21T20:17:51.955Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T14:12:17.167Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T14:12:17.177Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T14:41:12.181Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T14:41:12.197Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:46:54.939Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:47:22.459Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:26.828Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.760Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.770Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.780Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.796Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.814Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.830Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.843Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.884Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.893Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.901Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.909Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.915Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.923Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.930Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.941Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.950Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.961Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:54.976Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:48:57.974Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+
+[HONEYPOT ALERT] 
+Time: 2025-04-22T14:49:22.623Z
+IP: 192.168.133.14
+Method: GET
+User-Agent: Fuzz Faster U Fool v2.1.0-dev
+Path: /api/internal/exportPatientData
+Headers: {
+  "host": "192.168.133.40:5000",
+  "user-agent": "Fuzz Faster U Fool v2.1.0-dev",
+  "accept-encoding": "gzip"
+}
+Query: {}
+Body: {}
+-----------------------------
+[2025-04-22T18:58:23.899Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T18:58:23.905Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T19:01:16.959Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
+[2025-04-22T19:01:16.974Z] Honeypot triggered at /api/fake-endpoint from IP: 192.168.133.14, User-Agent: Fuzz Faster U Fool v2.1.0-dev
