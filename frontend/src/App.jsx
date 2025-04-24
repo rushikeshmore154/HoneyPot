@@ -11,6 +11,7 @@ import { Toaster } from "./components/ui/toaster";
 import HospitalAnalyticsPage from "./pages/HospitalAnalyticsPage";
 import HospitalAppointmentPages from "./pages/HospitalAppointmentPages";
 import InventoryManagement from "./pages/HospitalInventory";
+import AttackLogsDashboard from "./components/honey_pot/AttackLogsDashboard";
 
 function App() {
     return (
@@ -39,6 +40,10 @@ function App() {
                                 <HospitalDashboardPage />
                             </Protected>
                         }
+                    />
+                    <Route
+                        path="/auth/admin/dashboard"
+                        element={<AttackLogsDashboard />}
                     />
                     <Route
                         path="/hospital/dashboard/analytics"
